@@ -1,13 +1,14 @@
 <template>
-    <lightning-card
-        variant="narrow"
-        icon-name="standard:task">
+    <lightning-card icon-name="standard:task">
         <div slot="title">{task.Subject}</div>
         <div class="slds-card__body slds-card__body_inner">
             <dl>
-                <dt>{task.Id}</dt>
-                <dt>{task.Description}</dt>
-                <dt>{task.Status}</dt>
+                <dt>Owner:</dt>
+                <dd>{task.Owner.Name}</dd>
+                <dt>Due Date:</dt>
+                <dd>{task.ActivityDate}</dd>
+                <dt>Comments:</dt>
+                <dd>{task.Description}</dd>
             </dl>
         </div>
 
