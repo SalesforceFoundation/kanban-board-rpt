@@ -1,3 +1,21 @@
 <template>
-    This is a task
+    <lightning-card
+        variant="narrow"
+        icon-name="standard:task">
+        <div slot="title">{task.Subject}</div>
+        <div class="slds-card__body slds-card__body_inner">
+            <dl>
+                <dt>{task.Id}</dt>
+                <dt>{task.Description}</dt>
+                <dt>{task.Status}</dt>
+            </dl>
+        </div>
+
+        <div slot="actions">
+            <lightning-button-icon icon-name="utility:edit">Edit</lightning-button-icon>
+        </div>
+    </lightning-card>
+    
+    
+    
 </template>
