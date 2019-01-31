@@ -56,15 +56,20 @@ sfdx force:apex:execute -f seed.apex
 * Type sfdx.
 * Select `SFDX: Open Default Scratch Org`
 * Click the grid menu icon next to Setup for to open the App Launcher
+
 ![App Launcher Screenshot](images/appLauncher.png)
 * Select Accounts
+
 ![Select account tab](images/selectAccountTab.png)
 * Select the List view `All`
+
 ![All list view](images/allListView.png)
 * Click on `We Can Can Recycling`
 * This is the "Record Page". You should see a basic kanban board like this:
+
 ![Kanban Board](images/kanbanBoard.png)
 * Should you need to add more tasks, you can do so by clicking the "Add" button under "New Task"
+
 ![Add new tasks](images/newTasks.png)
 
 ## Running Tests
