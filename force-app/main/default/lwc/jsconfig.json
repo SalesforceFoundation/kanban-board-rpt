@@ -3,11 +3,11 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
-            "c/task-card": [
-                "taskCard/taskCard.js"
-            ],
             "c/task-board": [
                 "taskBoard/taskBoard.js"
+            ],
+            "c/task-card": [
+                "taskCard/taskCard.js"
             ]
         }
     },

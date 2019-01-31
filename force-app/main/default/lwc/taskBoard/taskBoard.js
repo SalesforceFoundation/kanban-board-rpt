@@ -2,6 +2,8 @@ import { LightningElement, api, wire, track } from 'lwc';
 import getTasks from '@salesforce/apex/TaskBoardController.getTasks';
 
 export default class TaskBoard extends LightningElement {
+    //Allows the component to be aware of the ID of the record (i.e. the Account)
+    //that it is embedded on
     @api recordId;
 
     @track notStartedTasks = [];
