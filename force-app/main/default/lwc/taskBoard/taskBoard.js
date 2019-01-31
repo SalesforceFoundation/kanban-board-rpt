@@ -14,6 +14,7 @@ export default class TaskBoard extends LightningElement {
     
     @wire(getTasks, { recordId: '$recordId' })
     processTasks({ error, data }) {
+        //Seems repetitive, is there a better way to do this?
         if (data) {
             data.forEach(element => {
                 if (element.Status === 'Not Started') {
