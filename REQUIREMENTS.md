@@ -1,8 +1,8 @@
 # Requirements
 
-First, fork this repository - do not make branches of this repository.
+First, fork this repository - do not make branches off of this repository.
 
-During this sprint your scrum team is building a kanban board for managing tasks on an account. The first user story for creating the kanban board to display task records has already been completed. The second user story was started, but unfortunately the developer needed to hop off the story to work on something else. They handed it off to you informed you that they created two Lightning Web Components and one Apex Controller so far:
+During this sprint your scrum team is building a kanban board for managing tasks on an account. The first user story for creating the kanban board to display task records has already been completed. The second user story was started, but unfortunately the developer needed to hop off the story to work on something else. They handed it off to you and informed you that they created two Lightning Web Components and one Apex Controller so far:
 
 * Lightning Web Components
     * taskBoard - container for all the lanes and the tasks in that lane (each lane represents a Task status)
@@ -13,7 +13,7 @@ During this sprint your scrum team is building a kanban board for managing tasks
     * TaskBoardController_TEST
         * contains test methods for TaskBoardController
 
-Your job is to complete the rest of User Story 2 and User Story 3:
+Your job is to complete the rest of User Story 2 and User Story 3. User Story 1 is included for context:
 
 ```
 User Story 1:
