@@ -1,0 +1,16 @@
+{
+  "name": "lwc-rpt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Salesforce.org",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "test:unit": "lwc-jest -- --silent",
+    "test:unit:watch": "lwc-jest --watch",
+    "test:unit:debug": "lwc-jest --debug"
+  },
+  "devDependencies": {
+    "@salesforce/lwc-jest": "^0.4.7"
+  }
+}
