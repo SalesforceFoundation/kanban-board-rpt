@@ -1,10 +1,11 @@
 # Salesforce Development RPT
 
-Before you start, make sure to fork this repo and pull down to your machine. All instructions assume you are in the base of the project in your terminal
-This document provides information on how to set up your machine to do Salesforce development needed for this RPT.
-[Click here for RPT Assignment Details](REQUIREMENTS.md)
+Before you start, make sure to fork this repo and pull down to your machine. All instructions assume you are in the base of the project in your terminal.
 
-## Setup
+This document provides information on how to set up your machine to do Salesforce development needed for this RPT.
+[Click here for the RPT Assignment Details](REQUIREMENTS.md)
+
+## Setup (expected time to complete from 20-30 minutes)
 
 ### Install tools
 First you'll need to install some tools on your machine. Please follow these steps in this Trailhead module to get started:
