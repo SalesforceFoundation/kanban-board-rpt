@@ -1,5 +1,6 @@
 # Salesforce Development RPT
 
+Before you start, make sure to fork this repo and pull down to your machine. All instructions assume you are in the base of the project in your terminal
 This document provides information on how to set up your machine to do Salesforce development needed for this RPT.
 [Click here for RPT Assignment Details](REQUIREMENTS.md)
 
@@ -49,7 +50,7 @@ Now you need to push your source code to org.
 
 ### Add Test Data
 Add some test data to your org. Run this command from the base folder of your project. It will run a script that inserts data into your scratch org.
-sfdx force:apex:execute -f seed.apex
+`sfdx force:apex:execute -f seed.apex`
 
 ### Check Out Your Org in your Browser
 * In Visual Studio Code, press Command + Shift + P on macOS or Ctrl + Shift + P on Windows or Linux.
