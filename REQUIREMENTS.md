@@ -103,4 +103,4 @@ Additional Notes
 
 * __At Salesforce.org, work/life balance is important to us.__ Therefore we ask that you spend enough time on this exercise as you deem fit for your lifestyle.  Again, we are not looking for a complete solution but rather enough data to get a sense of your problem solving and coding skills, as well as the ability to discuss your solution with others.
 
-Once your solution is complete, please send us a link to your forked repository with your solution so that our team can review.
+Once your solution is complete, please submit a pull request from your forked repository to this repository with your solution so that our team can comment and review.
