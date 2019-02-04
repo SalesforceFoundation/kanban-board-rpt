@@ -1,9 +1,14 @@
-# Salesforce Development RPT
+# Salesforce Development Remote Programming Test (RPT)
 
-Before you start, make sure to fork this repo and pull down to your machine. All instructions assume you are in the base of the project in your terminal.
+# Goals
+This project is meant to gauge your ability to develop on the Salesforce platform utilizing Lightning Web Components (LWC). The target applicant is someone who has development experience, but not necessarily on the Salesforce platform. By focusing on Lightning Web Components, we hope to provide a project that is grounded in standard JavaScript practices, while also giving the applicant and idea of what it is like to work on the Salesforce platform.
 
 This document provides information on how to set up your machine to do Salesforce development needed for this RPT.
 [Click here for the RPT Assignment Details](REQUIREMENTS.md)
+
+[Click here for documentation on LWC](https://developer.salesforce.com/docs/component-library/documentation/lwc)
+
+Before you start, make sure to fork this repo and pull down to your machine. All instructions assume you are in the base of the project in your terminal.
 
 ## Setup (expected time to complete from 20-30 minutes)
 
