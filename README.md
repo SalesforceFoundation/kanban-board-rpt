@@ -74,17 +74,20 @@ Add some test data to your org. Run this command from the base folder of your pr
 <p align="center">
     <img alt="Select account tab" src="images/selectAccountTab.png"/>
 </p>
+
 * Select the List view `All`
 
 <p align="center">
     <img alt="All list view" src="images/allListView.png"/>
 </p>
+
 * Click on `We Can Can Recycling`
 * This is the "Record Page". You should see a basic kanban board like this:
 
 <p align="center">
     <img alt="Kanban Board" src="images/kanbanBoard.png"/>
 </p>
+
 * Should you need to add more tasks, you can do so by clicking the "Add" button under "New Task"
 
 <p align="center">
