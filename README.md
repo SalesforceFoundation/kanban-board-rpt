@@ -4,9 +4,10 @@
 This project is meant to gauge your ability to develop on the Salesforce platform utilizing Lightning Web Components (LWC). The target applicant is someone who has development experience, but not necessarily on the Salesforce platform. By focusing on Lightning Web Components, we hope to provide a project that is grounded in standard JavaScript practices, while also giving the applicant and idea of what it is like to work on the Salesforce platform.
 
 This document provides information on how to set up your machine to do Salesforce development needed for this RPT.
-[Click here for the RPT Assignment Details](REQUIREMENTS.md)
 
-[Click here for documentation on LWC](https://developer.salesforce.com/docs/component-library/documentation/lwc)
+<a href="REQUIREMENTS.md" target="_blank">Click here for the RPT Assignment Details</a>
+
+<a href="https://developer.salesforce.com/docs/component-library/documentation/lwc" target="_blank">Click here for documentation on LWC</a>
 
 Before you start, make sure to fork this repo and pull down to your machine. All instructions assume you are in the base of the project in your terminal.
 
@@ -64,20 +65,31 @@ Add some test data to your org. Run this command from the base folder of your pr
 * Select `SFDX: Open Default Scratch Org`
 * Click the grid menu icon next to Setup for to open the App Launcher
 
-![App Launcher Screenshot](images/appLauncher.png)
+<p align="center">
+    <img src="images/appLauncher.png" alt="App Launcher Screenshot"/>
+</p>
+
 * Select Accounts
 
-![Select account tab](images/selectAccountTab.png)
+<p align="center">
+    <img alt="Select account tab" src="images/selectAccountTab.png"/>
+</p>
 * Select the List view `All`
 
-![All list view](images/allListView.png)
+<p align="center">
+    <img alt="All list view" src="images/allListView.png"/>
+</p>
 * Click on `We Can Can Recycling`
 * This is the "Record Page". You should see a basic kanban board like this:
 
-![Kanban Board](images/kanbanBoard.png)
+<p align="center">
+    <img alt="Kanban Board" src="images/kanbanBoard.png"/>
+</p>
 * Should you need to add more tasks, you can do so by clicking the "Add" button under "New Task"
 
-![Add new tasks](images/newTasks.png)
+<p align="center">
+    <img alt="Add new tasks" src="images/newTasks.png"/>
+</p>
 
 ## Running Tests
 To run Apex tests:
@@ -88,6 +100,7 @@ To run Apex tests:
 * This will run the tests in your scratch org and you will see the results of the tests in VS Code in the Output window
 
 To Run LWC tests locally on your machine:
+* Make sure you install <a href="https://nodejs.org/en/" target="_blank">node and npm</a>
 * At the base of your project folder run `npm install`
 * After that successfully installs, run `npm run test:unit`
 * LWC tests are found in the `__tests__` folder in your `lwc` folder. There are some tests in the components folders already to help you get started.
