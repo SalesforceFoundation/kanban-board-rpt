@@ -62,7 +62,7 @@ Add some test data to your org. Run this command from the base folder of your pr
 ### Check Out Your Org in your Browser
 * In Visual Studio Code, press Command + Shift + P on macOS or Ctrl + Shift + P on Windows or Linux.
 * Type sfdx.
-* Select `SFDX: Open Default Scratch Org`
+* Select `SFDX: Open Default Org`
 * Click the grid menu icon next to Setup for to open the App Launcher
 
 <p align="center">
