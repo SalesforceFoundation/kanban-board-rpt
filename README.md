@@ -19,7 +19,7 @@ First you'll need to install some tools on your machine. Please follow these ste
 [Link to Trailhead instructions](https://trailhead.salesforce.com/content/learn/projects/set-up-your-lightning-web-components-developer-tools/install-development-tools?trail_id=build-lightning-web-components)
 
 Make sure you:
-* Sign up for pre-release Developer Edition org
+* Sign up for [Spring '19 Pre-Release Developer Edition](https://www.salesforce.com/form/signup/prerelease-spring19.jsp) org
 * Enable Dev Hub in that Org
 * Install the SFDX CLI with the pre-release enabled.
 * Installed Visual Studio Code
