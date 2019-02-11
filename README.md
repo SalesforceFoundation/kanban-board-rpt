@@ -19,21 +19,21 @@ First you'll need to install some tools on your machine. Please follow these ste
 [Link to Trailhead instructions](https://trailhead.salesforce.com/content/learn/projects/set-up-your-lightning-web-components-developer-tools/install-development-tools?trail_id=build-lightning-web-components)
 
 Make sure you:
-* Sign up for [Spring '19 Pre-Release Developer Edition](https://www.salesforce.com/form/signup/prerelease-spring19.jsp) org
+* Sign up for [Developer Edition](https://developer.salesforce.com/signup) org
 * Enable Dev Hub in that Org
     * From Setup, enter `dev` in the Quick Find box, then click **Dev Hub**. Ensure that **Enable Dev Hub** and **Enable Unlocked Packages** are enabled.
-* Install the SFDX CLI with the pre-release enabled.
-* Installed Visual Studio Code
+* Install **SFDX CLI**
+* Install **Visual Studio Code**
     * While it is possible to use a different IDE/Editor, we will not be able to answer any questions regarding your set up and thus do not recommend doing so for this RPT
-* Installed the Lightning Web Components extension in Visual Studio Code
+* Install the **Lightning Web Components** extension in Visual Studio Code
 
 ### Authorize a Dev Hub
 First you'll need to Authorize a Dev Hub. A Dev Hub allows you to create scratch orgs, which are basically developer environments hosted on Salesforce.
 
 * In Visual Studio Code, press Command + Shift + P on macOS or Ctrl + Shift + P on Windows or Linux.
-* Type sfdx.
+* Type `sfdx`.
 * Select `SFDX: Authorize a Dev Hub`
-* Log in using your pre-release Dev Hub org credentials
+* Log in with credentials for your Developer Org with Dev Hub enabled
 * Click Allow.
 * After you authenticate in the browser, the CLI remembers your Dev Hub credentials and you should a success message in the Output window in VS Code
 
