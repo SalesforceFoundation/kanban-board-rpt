@@ -103,7 +103,8 @@ To run Apex tests:
 * This will run the tests in your scratch org and you will see the results of the tests in VS Code in the Output window
 
 To Run LWC tests locally on your machine:
-* Make sure you install <a href="https://nodejs.org/en/" target="_blank">node and npm</a>
+* Make sure you install <a href="https://nodejs.org/en/" target="_blank">node and npm</a> and Python 2
+    * For macOS: `brew install python@2`
 * At the base of your project folder run `npm install`
 * After that successfully installs, run `npm run test:unit`
 * LWC tests are found in the `__tests__` folder in your `lwc` folder. There are some tests in the components folders already to help you get started.
