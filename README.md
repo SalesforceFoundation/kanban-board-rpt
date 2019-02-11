@@ -21,6 +21,7 @@ First you'll need to install some tools on your machine. Please follow these ste
 Make sure you:
 * Sign up for [Spring '19 Pre-Release Developer Edition](https://www.salesforce.com/form/signup/prerelease-spring19.jsp) org
 * Enable Dev Hub in that Org
+    * From Setup, enter `dev` in the Quick Find box, then click **Dev Hub**. Ensure that **Enable Dev Hub** and **Enable Unlocked Packages** are enabled.
 * Install the SFDX CLI with the pre-release enabled.
 * Installed Visual Studio Code
     * While it is possible to use a different IDE/Editor, we will not be able to answer any questions regarding your set up and thus do not recommend doing so for this RPT
