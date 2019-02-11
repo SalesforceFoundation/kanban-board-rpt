@@ -30,7 +30,7 @@ Make sure you:
 ### Authorize a Dev Hub
 First you'll need to Authorize a Dev Hub. A Dev Hub allows you to create scratch orgs, which are basically developer environments hosted on Salesforce.
 
-* In Visual Studio Code, press Command + Shift + P on macOS or Ctrl + Shift + P on Windows or Linux.
+* In Visual Studio Code, press `Command` + `Shift` + `P` on macOS or `Ctrl` + `Shift` + `P` on Windows or Linux.
 * Type `sfdx`.
 * Select `SFDX: Authorize a Dev Hub`
 * Log in with credentials for your Developer Org with Dev Hub enabled
@@ -40,8 +40,8 @@ First you'll need to Authorize a Dev Hub. A Dev Hub allows you to create scratch
 ### Create a Default Scratch Org
 A scratch org is an ephemeral salesforce instance that only lasts for 7 to 30 days (based on your settings) that is source control driven, meaning the only things that exist in it are the basic out of Salesforce features and anything you have in version control.
 
-* In Visual Studio Code, press Command + Shift + P on macOS or Ctrl + Shift + P on Windows or Linux.
-* Type sfdx.
+* In Visual Studio Code, press `Command` + `Shift` + `P` on macOS or `Ctrl` + `Shift` + `P` on Windows or Linux.
+* Type `sfdx`.
 * Select `SFDX: Create a Default Scratch Org....`
 * Press Enter to accept the default `project-scratch-def.json`
 * Press Enter to accept the default scratch org alias
@@ -50,8 +50,8 @@ A scratch org is an ephemeral salesforce instance that only lasts for 7 to 30 da
 
 ### Push Source to Org
 Now you need to push your source code to org.
-* In Visual Studio Code, press Command + Shift + P on macOS or Ctrl + Shift + P on Windows or Linux.
-* Type sfdx.
+* In Visual Studio Code, press `Command` + `Shift` + `P` on macOS or `Ctrl` + `Shift` + `P` on Windows or Linux.
+* Type `sfdx`.
 * Select `SFDX: Push Source to Default Scratch Org`
 * Since is this is the first time your pushing your source code to your scratch org, this may take a minute. When complete, you'll see the results in the Output window in Visual Studio Code.
 * This is the same command you'll use to push any changes you make your source code. This command does a diff and only pushes code that has actually changed, so subsequent pushes will be faster than the initial one.
@@ -61,8 +61,8 @@ Add some test data to your org. Run this command from the base folder of your pr
 `sfdx force:apex:execute -f seed.apex`
 
 ### Check Out Your Org in your Browser
-* In Visual Studio Code, press Command + Shift + P on macOS or Ctrl + Shift + P on Windows or Linux.
-* Type sfdx.
+* In Visual Studio Code, press `Command` + `Shift` + `P` on macOS or `Ctrl` + `Shift` + `P` on Windows or Linux.
+* Type `sfdx`.
 * Select `SFDX: Open Default Org`
 * Click the grid menu icon next to Setup for to open the App Launcher
 
@@ -97,10 +97,10 @@ Add some test data to your org. Run this command from the base folder of your pr
 
 ## Running Tests
 To run Apex tests:
-* In Visual Studio Code, press Command + Shift + P on macOS or Ctrl + Shift + P on Windows or Linux.
-* Type sfdx.
+* In Visual Studio Code, press `Command` + `Shift` + `P` on macOS or `Ctrl` + `Shift` + `P` on Windows or Linux.
+* Type `sfdx`.
 * Select `SFDX: Invoke Apex Tests`
-* Select the test class you want to run (i.e. TaskBoardController_TEST)
+* Select the test class you want to run (i.e. `TaskBoardController_TEST`)
 * This will run the tests in your scratch org and you will see the results of the tests in VS Code in the Output window
 
 To Run LWC tests locally on your machine:
