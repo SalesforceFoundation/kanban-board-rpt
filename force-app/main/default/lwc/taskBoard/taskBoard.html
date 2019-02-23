@@ -4,6 +4,8 @@
             <lightning-layout-item padding="horizontal-small" size="12">
                 <h2 class="slds-text-heading_medium slds-p-bottom_medium slds-p-top_large" title="Task Board">Task Board</h2>
             </lightning-layout-item>
+
+            <!-- NOT STARTED TASKS LANE -->
             <lightning-layout-item padding="horizontal-small" size="2">
                 <lightning-layout multiple-rows="true" >
                     <lightning-layout-item size="12">
@@ -20,7 +22,9 @@
                     </template>
                 </lightning-layout>
             </lightning-layout-item>
+            <!-- END NOT STARTED TASKS LANE -->
 
+            <!-- IN PROGRESS TASKS LANE -->
             <lightning-layout-item padding="horizontal-small" size="2">
                 <lightning-layout multiple-rows="true" >
                     <lightning-layout-item size="12">
@@ -37,7 +41,9 @@
                     </template>
                 </lightning-layout>
             </lightning-layout-item>
+            <!-- END IN PROGRESS TASKS LANE -->
 
+            <!-- COMPLETED TASKS LANE -->
             <lightning-layout-item padding="horizontal-small" size="2">
                 <lightning-layout multiple-rows="true" >
                     <lightning-layout-item size="12">
@@ -54,7 +60,9 @@
                     </template>
                 </lightning-layout>
             </lightning-layout-item>
+            <!-- END COMPLETED TASKS LANE -->
 
+            <!-- WAITING TASKS LANE -->
             <lightning-layout-item padding="horizontal-small" size="2">
                 <lightning-layout multiple-rows="true" >
                     <lightning-layout-item size="12">
@@ -71,7 +79,9 @@
                     </template>
                 </lightning-layout>
             </lightning-layout-item>
+            <!-- END WAITING TASKS LANE -->
 
+            <!-- DEFERRED TASKS LANE -->
             <lightning-layout-item padding="horizontal-small" size="2">
                 <lightning-layout multiple-rows="true" >
                     <lightning-layout-item size="12">
@@ -88,6 +98,7 @@
                     </template>
                 </lightning-layout>
             </lightning-layout-item>
+            <!-- END DEFERRED TASKS LANE -->
         </lightning-layout>
     </div>
 </template>

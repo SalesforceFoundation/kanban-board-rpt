@@ -10,10 +10,21 @@
                 <dt>Comments:</dt>
                 <dd class="description">{task.Description}</dd>
             </dl>
+            <template if:true={editing}>
+                <lightning-button-icon icon-name="utility:close" onclick={handleCancel}></lightning-button-icon>
+                <lightning-button-icon icon-name="action:check" onclick={handleSave}></lightning-button-icon>
+                <lightning-textarea
+                    name="editTaskDescription"
+                    label="Update Comments"
+                    max-length="500"
+                    onchange={handleDescChange}
+                    value={task.Description}>
+                </lightning-textarea>
+            </template>
         </div>
 
         <div slot="actions">
-            <lightning-button-icon icon-name="utility:edit" onclick={edit}>Edit</lightning-button-icon>
+            <lightning-button-icon icon-name="utility:edit" onclick={handleEdit}>Edit</lightning-button-icon>
         </div>
     </lightning-card>
 </template>
