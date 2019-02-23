@@ -8,7 +8,7 @@
                 <dt>Due Date:</dt>
                 <dd class="dueDate">{task.ActivityDate}</dd>
                 <dt>Comments:</dt>
-                <dd class="description">{task.Description}</dd>
+                <dd class="description">{taskDescription}</dd>
             </dl>
             <template if:true={editing}>
                 <lightning-button-icon icon-name="utility:close" onclick={handleCancel}></lightning-button-icon>
@@ -18,7 +18,7 @@
                     label="Update Comments"
                     max-length="500"
                     onchange={handleDescChange}
-                    value={task.Description}>
+                    value={taskDescription}>
                 </lightning-textarea>
             </template>
         </div>

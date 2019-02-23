@@ -1,11 +1,11 @@
-import { LightningElement, api, track } from 'lwc';
+import { LightningElement, api, track, wire } from 'lwc';
 import saveTasks from '@salesforce/apex/TaskBoardController.saveTasks';
-import DESCRIPTION from '@salesforce/schema/Task.Description';
 
 export default class TaskCard extends LightningElement {
     //NOTE: @api properties are immutable
     @api task;
     @track editing; // track editing status of the component
+    @track currentDesc; // track saved description value
     updatedComment; // Store new comment; no need to track since its not reactive
 
     handleEdit() {
@@ -20,21 +20,29 @@ export default class TaskCard extends LightningElement {
     handleDescChange(event) {
         if (this.editing) {
             this.updatedComment = event.detail.value;
-            // console.log(this.updatedComment);
         }
     }
 
     //Basic wiring to a save method in Salesforce server
     handleSave() {
+        // update currentDesc property with value from textarea
+        this.currentDesc = this.updatedComment;
+
         let taskToSave = Object.assign({}, this.task, {Description: this.updatedComment});
         saveTasks({ tasks: [taskToSave] })
             .then(() => {
-                console.log('Success!', JSON.stringify(taskToSave.Description));
-                console.log('New task: ' + JSON.stringify(this.task.Description));
+                console.log('Success! New description value: ', JSON.stringify(taskToSave.Description));
                 this.editing = false;
             })
             .catch(() => {
                 console.log('Something went wrong...');
             })
+    }
+
+    // Getter method that checks to see if there is a value in currentDesc
+    // If not, then use value from this.task.Description
+    // Otherwise, use value from currentDesc
+    get taskDescription() {
+        return !this.currentDesc ? this.task.Description : this.currentDesc ;
     }
 }
