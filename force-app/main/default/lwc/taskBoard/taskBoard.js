@@ -6,34 +6,25 @@ export default class TaskBoard extends LightningElement {
     //that it is embedded on
     @api recordId;
 
-    @track notStartedTasks = [];
-    @track inProgressTasks = [];
-    @track completedTasks = [];
-    @track waitingOnSomeoneTasks = [];
-    @track deferredTasks = [];
+    @track taskLanes = [
+        {id: 1, title: "Not Started", name: "notStartedTasksLane", tasks: []},
+        {id: 2, title: "In Progress", name: "inProgressTasksLane", tasks: []},
+        {id: 3, title: "Completed", name: "completedTasksLane", tasks: []},
+        {id: 4, title: "Waiting on someone else", name: "waitingOnSomeoneTasksLane", tasks: []},
+        {id: 5, title: "Deferred", name: "deferredTasksLane", tasks: []}
+    ];
     
     @wire(getTasks, { recordId: '$recordId' })
     processTasks({ error, data }) {
-        //Seems repetitive, is there a better way to do this?
+
         if (data) {
             data.forEach(element => {
-                if (element.Status === 'Not Started') {
-                    this.notStartedTasks.push(element);
-                }
-                else if (element.Status === 'In Progress') {
-                    this.inProgressTasks.push(element);
-                }
-                else if (element.Status === 'Completed') {
-                    this.completedTasks.push(element);
-                }
-                else if (element.Status === 'Waiting on someone else') {
-                    this.waitingOnSomeoneTasks.push(element);
-                }
-                else if (element.Status === 'Deferred') {
-                    this.deferredTasks.push(element);
-                }
+                this.taskLanes.forEach(lane => {
+                    if (element.Status === lane.title) {
+                        this.taskLanes[lane.id-1].tasks.push(element);
+                    }
+                });
             });
-            this.record = data;
         } else if (error) {
             console.log(error);
         }

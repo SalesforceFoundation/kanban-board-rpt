@@ -25,13 +25,12 @@ export default class TaskCard extends LightningElement {
 
     //Basic wiring to a save method in Salesforce server
     handleSave() {
-        // update currentDesc property with value from textarea
-        this.currentDesc = this.updatedComment;
-
         let taskToSave = Object.assign({}, this.task, {Description: this.updatedComment});
         saveTasks({ tasks: [taskToSave] })
             .then(() => {
-                console.log('Success! New description value: ', JSON.stringify(taskToSave.Description));
+                console.log('Success! New description value: ' + JSON.stringify(taskToSave.Description), 'Task Id: ' + this.task.Id, );
+                // update currentDesc property with value from textarea
+                this.currentDesc = this.updatedComment;
                 this.editing = false;
             })
             .catch(() => {

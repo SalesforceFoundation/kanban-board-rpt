@@ -5,100 +5,11 @@
                 <h2 class="slds-text-heading_medium slds-p-bottom_medium slds-p-top_large" title="Task Board">Task Board</h2>
             </lightning-layout-item>
 
-            <!-- NOT STARTED TASKS LANE -->
-            <lightning-layout-item padding="horizontal-small" size="2">
-                <lightning-layout multiple-rows="true" >
-                    <lightning-layout-item size="12">
-                        <lightning-card class="notStartedTasksLane">
-                            <div slot="title">Not Started</div>
-                        </lightning-card>
-                    </lightning-layout-item>
-                    <template if:true={notStartedTasks}>
-                        <template for:each={notStartedTasks} for:item="task">
-                            <lightning-layout-item key={task.Id} size="12" class="notStartedTask">
-                                <c-task-card task={task}></c-task-card>
-                            </lightning-layout-item>
-                        </template>
-                    </template>
-                </lightning-layout>
-            </lightning-layout-item>
-            <!-- END NOT STARTED TASKS LANE -->
-
-            <!-- IN PROGRESS TASKS LANE -->
-            <lightning-layout-item padding="horizontal-small" size="2">
-                <lightning-layout multiple-rows="true" >
-                    <lightning-layout-item size="12">
-                        <lightning-card class="inProgressTasksLane">
-                            <div slot="title">In Progress</div>
-                        </lightning-card>
-                    </lightning-layout-item>
-                    <template if:true={inProgressTasks}>
-                        <template for:each={inProgressTasks} for:item="task">
-                            <lightning-layout-item key={task.Id} size="12" class="inProgressTask">
-                                <c-task-card task={task}></c-task-card>
-                            </lightning-layout-item>
-                        </template>
-                    </template>
-                </lightning-layout>
-            </lightning-layout-item>
-            <!-- END IN PROGRESS TASKS LANE -->
-
-            <!-- COMPLETED TASKS LANE -->
-            <lightning-layout-item padding="horizontal-small" size="2">
-                <lightning-layout multiple-rows="true" >
-                    <lightning-layout-item size="12">
-                        <lightning-card class="completedTasksLane">
-                            <div slot="title">Completed</div>
-                        </lightning-card>
-                    </lightning-layout-item>
-                    <template if:true={completedTasks}>
-                        <template for:each={completedTasks} for:item="task">
-                            <lightning-layout-item key={task.Id} size="12" class="completedTask">
-                                <c-task-card task={task}></c-task-card>
-                            </lightning-layout-item>
-                        </template>
-                    </template>
-                </lightning-layout>
-            </lightning-layout-item>
-            <!-- END COMPLETED TASKS LANE -->
-
-            <!-- WAITING TASKS LANE -->
-            <lightning-layout-item padding="horizontal-small" size="2">
-                <lightning-layout multiple-rows="true" >
-                    <lightning-layout-item size="12">
-                        <lightning-card class="waitingOnSomeoneTasksLane">
-                            <div slot="title">Waiting on someone else</div>
-                        </lightning-card>
-                    </lightning-layout-item>
-                    <template if:true={waitingOnSomeoneTasks}>
-                        <template for:each={waitingOnSomeoneTasks} for:item="task">
-                            <lightning-layout-item key={task.Id} size="12" class="waitingOnSomeoneTask">
-                                <c-task-card task={task}></c-task-card>
-                            </lightning-layout-item>
-                        </template>
-                    </template>
-                </lightning-layout>
-            </lightning-layout-item>
-            <!-- END WAITING TASKS LANE -->
-
-            <!-- DEFERRED TASKS LANE -->
-            <lightning-layout-item padding="horizontal-small" size="2">
-                <lightning-layout multiple-rows="true" >
-                    <lightning-layout-item size="12">
-                        <lightning-card class="deferredTasksLane">
-                            <div slot="title">Deferred</div>
-                        </lightning-card>
-                    </lightning-layout-item>
-                    <template if:true={deferredTasks}>
-                        <template for:each={deferredTasks} for:item="task">
-                            <lightning-layout-item key={task.Id} size="12" class="deferredTask">
-                                <c-task-card task={task}></c-task-card>
-                            </lightning-layout-item>
-                        </template>
-                    </template>
-                </lightning-layout>
-            </lightning-layout-item>
-            <!-- END DEFERRED TASKS LANE -->
+            <template for:each={taskLanes} for:item="lane">
+                <lightning-layout-item key={lane.id} padding="horizontal-small" size="2" class="task-lane">
+                    <c-task-board-lanes lane={lane}></c-task-board-lanes>
+                </lightning-layout-item>
+            </template>
         </lightning-layout>
     </div>
 </template>

@@ -1,0 +1,16 @@
+<template>
+  <lightning-layout multiple-rows="true" >
+      <lightning-layout-item size="12">
+          <lightning-card class={lane.name}>
+              <div slot="title">{lane.title}</div>
+          </lightning-card>
+      </lightning-layout-item>
+      <template if:true={lane.tasks}>
+          <template for:each={lane.tasks} for:item="task">
+              <lightning-layout-item key={task.Id} size="12" class="notStartedTask">
+                  <c-task-card task={task}></c-task-card>
+              </lightning-layout-item>
+          </template>
+      </template>
+  </lightning-layout>
+</template>

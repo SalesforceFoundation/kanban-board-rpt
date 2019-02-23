@@ -1,4 +1,5 @@
 <template>
+    <div class="task-card" draggable="true">
     <lightning-card icon-name="standard:task">
         <div slot="title">{task.Subject}</div>
         <div class="slds-card__body slds-card__body_inner">
@@ -27,4 +28,5 @@
             <lightning-button-icon icon-name="utility:edit" onclick={handleEdit}>Edit</lightning-button-icon>
         </div>
     </lightning-card>
+    </div>
 </template>

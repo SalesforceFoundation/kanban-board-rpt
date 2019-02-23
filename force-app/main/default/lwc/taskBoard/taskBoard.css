@@ -1,0 +1,6 @@
+.task-lane {
+  padding: 5px;
+  border: 2px solid lightblue;
+  border-radius: .5rem;
+  align-self: stretch;
+}
