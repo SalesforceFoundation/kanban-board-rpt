@@ -1,5 +1,5 @@
 <template>
-    <div class="task-card" draggable="true">
+    <div class="task-card" draggable="true" ondragstart={handleDragStart}>
     <lightning-card icon-name="standard:task">
         <div slot="title">{task.Subject}</div>
         <div class="slds-card__body slds-card__body_inner">
@@ -13,7 +13,7 @@
             </dl>
             <template if:true={editing}>
                 <lightning-button-icon icon-name="utility:close" onclick={handleCancel}></lightning-button-icon>
-                <lightning-button-icon icon-name="action:check" onclick={handleSave}></lightning-button-icon>
+                <lightning-button-icon icon-name="action:check" onclick={handleSaveDesc}></lightning-button-icon>
                 <lightning-textarea
                     name="editTaskDescription"
                     label="Update Comments"

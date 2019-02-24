@@ -5,13 +5,12 @@ export default class TaskBoard extends LightningElement {
     //Allows the component to be aware of the ID of the record (i.e. the Account)
     //that it is embedded on
     @api recordId;
-
     @track taskLanes = [
-        {id: 1, title: "Not Started", name: "notStartedTasksLane", tasks: []},
-        {id: 2, title: "In Progress", name: "inProgressTasksLane", tasks: []},
-        {id: 3, title: "Completed", name: "completedTasksLane", tasks: []},
-        {id: 4, title: "Waiting on someone else", name: "waitingOnSomeoneTasksLane", tasks: []},
-        {id: 5, title: "Deferred", name: "deferredTasksLane", tasks: []}
+        {id: 1, title: "Not Started", name: "notStartedTasksLane", className: "notStartedTask", tasks: []},
+        {id: 2, title: "In Progress", name: "inProgressTasksLane", className: "inProgressTask", tasks: []},
+        {id: 3, title: "Completed", name: "completedTasksLane", className: "completedTask", tasks: []},
+        {id: 4, title: "Waiting on someone else", name: "waitingOnSomeoneTasksLane", className: "waitingOnSomeoneTask", tasks: []},
+        {id: 5, title: "Deferred", name: "deferredTasksLane", className: "deferredTask", tasks: []}
     ];
     
     @wire(getTasks, { recordId: '$recordId' })
@@ -28,5 +27,28 @@ export default class TaskBoard extends LightningElement {
         } else if (error) {
             console.log(error);
         }
+    }
+
+    handleDragOver(event) {
+        event.preventDefault();
+        event.currentTarget.classList.add('dragged-over');
+    }
+
+    handleDragLeave(event) {
+        event.preventDefault();
+        event.currentTarget.classList.remove('dragged-over');
+    }
+
+    handleDrop(event) {
+        event.preventDefault();
+        event.currentTarget.classList.remove('dragged-over');
+
+        let newLane = event.currentTarget.dataset.lane;
+        this.template.querySelector('c-task-card.moving').newLane(newLane);
+        this.template.querySelector('c-task-card.moving').classList.remove('moving');
+    }
+
+    handleDragging(event) {
+        event.target.classList.add('moving');
     }
 }

@@ -8,12 +8,12 @@ export default class TaskCard extends LightningElement {
     @track currentDesc; // track saved description value
     updatedComment; // Store new comment; no need to track since its not reactive
 
+
     handleEdit() {
         this.editing = true;
     }
 
     handleCancel() {
-        // close the textarea field without saving
         this.editing = false;
     }
 
@@ -24,7 +24,7 @@ export default class TaskCard extends LightningElement {
     }
 
     //Basic wiring to a save method in Salesforce server
-    handleSave() {
+    handleSaveDesc() {
         let taskToSave = Object.assign({}, this.task, {Description: this.updatedComment});
         saveTasks({ tasks: [taskToSave] })
             .then(() => {
@@ -38,10 +38,28 @@ export default class TaskCard extends LightningElement {
             })
     }
 
-    // Getter method that checks to see if there is a value in currentDesc
-    // If not, then use value from this.task.Description
-    // Otherwise, use value from currentDesc
+    @api
+    newLane(newLaneStatus) {
+        // console.log("NEW LANE: " + newLaneStatus);
+        let taskToSave = Object.assign({}, this.task, {Status: newLaneStatus});
+        saveTasks({ tasks: [taskToSave] })
+            .then(() => {
+                console.log('Success! New status value: ' + JSON.stringify(taskToSave));
+                // update currentDesc property with value from textarea
+                // this.currentDesc = this.updatedComment;
+            })
+            .catch(() => {
+                console.log('Something went wrong...');
+            })
+    }
+
+    handleDragStart() {
+        // console.log(event.currentTarget);
+        // event.currentTarget.parentNode('<c-task-card>').classList.add('moving-task');
+        this.dispatchEvent(new CustomEvent('dragging'));
+    }
+
     get taskDescription() {
-        return !this.currentDesc ? this.task.Description : this.currentDesc ;
+        return !this.currentDesc ? this.task.Description : this.currentDesc;
     }
 }

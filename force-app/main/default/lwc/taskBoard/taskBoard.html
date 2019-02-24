@@ -6,10 +6,32 @@
             </lightning-layout-item>
 
             <template for:each={taskLanes} for:item="lane">
-                <lightning-layout-item key={lane.id} padding="horizontal-small" size="2" class="task-lane">
-                    <c-task-board-lanes lane={lane}></c-task-board-lanes>
+                <lightning-layout-item key={lane.id}
+                    padding="horizontal-small"
+                    size="2"
+                    class="task-lane"
+                    data-lane={lane.title}
+                    ondragover={handleDragOver}
+                    ondragleave={handleDragLeave}
+                    ondrop={handleDrop}>
+                    <lightning-layout multiple-rows="true">
+                        <lightning-layout-item size="12">
+                            <lightning-card class={lane.name}>
+                                <div slot="title">{lane.title}</div>
+                            </lightning-card>
+                        </lightning-layout-item>
+                        <template if:true={lane.tasks}>
+                            <template for:each={lane.tasks} for:item="task">
+                                <lightning-layout-item key={task.Id} size="12" class={lane.className}>
+                                    <c-task-card task={task} ondragging={handleDragging}></c-task-card>
+                                </lightning-layout-item>
+                            </template>
+                        </template>
+                    </lightning-layout>
                 </lightning-layout-item>
             </template>
+
+            
         </lightning-layout>
     </div>
 </template>
