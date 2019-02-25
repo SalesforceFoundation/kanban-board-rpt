@@ -23,7 +23,7 @@
                         <template if:true={lane.tasks}>
                             <template for:each={lane.tasks} for:item="task">
                                 <lightning-layout-item key={task.Id} size="12" class={lane.className}>
-                                    <c-task-card task={task} ondragging={handleDragging}></c-task-card>
+                                    <c-task-card task={task} ondragging={handleDragging} ontaskupdate={handleTaskUpdate}></c-task-card>
                                 </lightning-layout-item>
                             </template>
                         </template>

@@ -1,4 +1,4 @@
-import { LightningElement, api, track, wire } from 'lwc';
+import { LightningElement, api, track } from 'lwc';
 import saveTasks from '@salesforce/apex/TaskBoardController.saveTasks';
 
 export default class TaskCard extends LightningElement {
@@ -7,7 +7,6 @@ export default class TaskCard extends LightningElement {
     @track editing; // track editing status of the component
     @track currentDesc; // track saved description value
     updatedComment; // Store new comment; no need to track since its not reactive
-
 
     handleEdit() {
         this.editing = true;
@@ -30,6 +29,7 @@ export default class TaskCard extends LightningElement {
             .then(() => {
                 console.log('Success! New description value: ' + JSON.stringify(taskToSave.Description), 'Task Id: ' + this.task.Id, );
                 // update currentDesc property with value from textarea
+                // Hack to update UI when new description is saved
                 this.currentDesc = this.updatedComment;
                 this.editing = false;
             })
@@ -40,13 +40,15 @@ export default class TaskCard extends LightningElement {
 
     @api
     newLane(newLaneStatus) {
-        // console.log("NEW LANE: " + newLaneStatus);
+        const currentStatus = this.task.Status;
         let taskToSave = Object.assign({}, this.task, {Status: newLaneStatus});
         saveTasks({ tasks: [taskToSave] })
             .then(() => {
                 console.log('Success! New status value: ' + JSON.stringify(taskToSave));
-                // update currentDesc property with value from textarea
-                // this.currentDesc = this.updatedComment;
+                const selectedEvent = new CustomEvent('taskupdate', {
+                    detail: { taskId: this.task.Id, oldStatus: currentStatus }
+                });
+                this.dispatchEvent(selectedEvent);
             })
             .catch(() => {
                 console.log('Something went wrong...');
@@ -54,8 +56,6 @@ export default class TaskCard extends LightningElement {
     }
 
     handleDragStart() {
-        // console.log(event.currentTarget);
-        // event.currentTarget.parentNode('<c-task-card>').classList.add('moving-task');
         this.dispatchEvent(new CustomEvent('dragging'));
     }
 
