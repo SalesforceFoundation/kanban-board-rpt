@@ -11,6 +11,9 @@
     "test:unit:debug": "lwc-jest --debug"
   },
   "devDependencies": {
-    "@salesforce/lwc-jest": "^0.4.7"
+    "@salesforce/lwc-jest": "^0.5.0"
+  },
+  "dependencies": {
+    "npm-check-updates": "^3.1.10"
   }
 }
