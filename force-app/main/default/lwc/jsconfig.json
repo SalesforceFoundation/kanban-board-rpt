@@ -3,10 +3,10 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
-            "c/task-board": [
+            "c/taskBoard": [
                 "taskBoard/taskBoard.js"
             ],
-            "c/task-card": [
+            "c/taskCard": [
                 "taskCard/taskCard.js"
             ]
         }
@@ -14,5 +14,10 @@
     "include": [
         "**/*",
         "../../../../.sfdx/typings/lwc/**/*.d.ts"
-    ]
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
 }
