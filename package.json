@@ -11,7 +11,8 @@
     "test:unit:debug": "lwc-jest --debug"
   },
   "devDependencies": {
-    "@salesforce/lwc-jest": "^0.5.5"
+    "@salesforce/lwc-jest": "^0.6.2",
+    "handlebars": ">=4.3.0"
   },
   "dependencies": {}
 }
